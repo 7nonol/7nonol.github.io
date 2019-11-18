@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>未知父元素高度 | CSS Base</title>
+    <meta name="description" content="一些常用的样式、技巧、效果">
+    
+    
+    <link rel="preload" href="/css_base/assets/css/0.styles.105e03e4.css" as="style"><link rel="preload" href="/css_base/assets/js/app.ef2754ed.js" as="script"><link rel="preload" href="/css_base/assets/js/2.00609d94.js" as="script"><link rel="preload" href="/css_base/assets/js/11.a5c8117f.js" as="script"><link rel="prefetch" href="/css_base/assets/js/10.c9373812.js"><link rel="prefetch" href="/css_base/assets/js/12.92a30e99.js"><link rel="prefetch" href="/css_base/assets/js/3.4065779f.js"><link rel="prefetch" href="/css_base/assets/js/4.9a765811.js"><link rel="prefetch" href="/css_base/assets/js/5.c6f03845.js"><link rel="prefetch" href="/css_base/assets/js/6.0148dd25.js"><link rel="prefetch" href="/css_base/assets/js/7.d4a00840.js"><link rel="prefetch" href="/css_base/assets/js/8.aa84042a.js"><link rel="prefetch" href="/css_base/assets/js/9.17ba6cd8.js">
+    <link rel="stylesheet" href="/css_base/assets/css/0.styles.105e03e4.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/css_base/" class="home-link router-link-active"><!----> <span class="site-name">CSS Base</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>配置</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/css_base/config/reset/" class="sidebar-link">Reset 重置</a></li><li><a href="/css_base/config/base/" class="sidebar-link">Base 基础</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>效果</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/css_base/effect/button/" class="sidebar-link">Button 按钮</a></li><li><a href="/css_base/effect/menu/" class="sidebar-link">Menu 导航菜单</a></li><li><a href="/css_base/effect/scroll/" class="sidebar-link">Scroll 滚动条</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>技巧</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/css_base/skill/vertical-center/" class="active sidebar-link">垂直居中</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/css_base/skill/vertical-center/#未知父元素高度" class="sidebar-link">未知父元素高度</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="未知父元素高度"><a href="#未知父元素高度" class="header-anchor">#</a> 未知父元素高度</h2> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">// 方法1
+.parentDom</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.childDom</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateY</span><span class="token punctuation">(</span>-50%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">// 方法2
+.parentDom</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.childDom</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">bottom</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/css_base/effect/scroll/" class="prev">Scroll 滚动条</a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/css_base/assets/js/app.ef2754ed.js" defer></script><script src="/css_base/assets/js/2.00609d94.js" defer></script><script src="/css_base/assets/js/11.a5c8117f.js" defer></script>
+  </body>
+</html>

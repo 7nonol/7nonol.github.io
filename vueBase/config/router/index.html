@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>$router和$route的区别 | VUE Base</title>
+    <meta name="description" content="一些常用的小功能">
+    <link rel="shortcut icon" type="image/x-icon" href="/vueBase/logo.png">
+    
+    <link rel="preload" href="/vueBase/assets/css/0.styles.5def34ee.css" as="style"><link rel="preload" href="/vueBase/assets/js/app.cd7a30d8.js" as="script"><link rel="preload" href="/vueBase/assets/js/2.14c2eaff.js" as="script"><link rel="preload" href="/vueBase/assets/js/10.4a80e0f1.js" as="script"><link rel="prefetch" href="/vueBase/assets/js/11.7eaae4dd.js"><link rel="prefetch" href="/vueBase/assets/js/12.768340ea.js"><link rel="prefetch" href="/vueBase/assets/js/13.35a2daec.js"><link rel="prefetch" href="/vueBase/assets/js/14.f1b130a7.js"><link rel="prefetch" href="/vueBase/assets/js/3.65f848c7.js"><link rel="prefetch" href="/vueBase/assets/js/4.4ad91c77.js"><link rel="prefetch" href="/vueBase/assets/js/5.9bfdfa0f.js"><link rel="prefetch" href="/vueBase/assets/js/6.2f235dee.js"><link rel="prefetch" href="/vueBase/assets/js/7.7237fb60.js"><link rel="prefetch" href="/vueBase/assets/js/8.121cf615.js"><link rel="prefetch" href="/vueBase/assets/js/9.d66972ee.js">
+    <link rel="stylesheet" href="/vueBase/assets/css/0.styles.5def34ee.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/vueBase/" class="home-link router-link-active"><!----> <span class="site-name">VUE Base</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>基础</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/vueBase/basis/style/" class="sidebar-link">风格指南</a></li><li><a href="/vueBase/basis/regular/" class="sidebar-link">正则</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>配置</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/vueBase/config/axios/" class="sidebar-link">axios 请求</a></li><li><a href="/vueBase/config/router/" class="active sidebar-link">router 路由</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vueBase/config/router/#router和-route的区别" class="sidebar-link">$router和$route的区别</a></li></ul></li><li><a href="/vueBase/config/i18n/" class="sidebar-link">i18n 多语言</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>技巧</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/vueBase/skill/npm/" class="sidebar-link">npm安装依赖</a></li><li><a href="/vueBase/skill/cli/" class="sidebar-link">切换默认包管理器</a></li><li><a href="/vueBase/skill/for/" class="sidebar-link">v-for截取前几位数组</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="router和-route的区别"><a href="#router和-route的区别" class="header-anchor">#</a> $router和$route的区别</h2> <ul><li>$router : 路由操作对象，只写对象</li> <li>$route :  路由信息对象，只读对象</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 操作 路由跳转</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token string">'hello'</span><span class="token punctuation">,</span>
+  params<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    name<span class="token punctuation">:</span> <span class="token string">'word'</span><span class="token punctuation">,</span>
+    age<span class="token punctuation">:</span> <span class="token string">'11'</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">//读取 路由参数接收</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$route<span class="token punctuation">.</span>params<span class="token punctuation">.</span>name
+<span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$route<span class="token punctuation">.</span>params<span class="token punctuation">.</span>age
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/vueBase/config/axios/" class="prev">axios 请求</a></span> <span class="next"><a href="/vueBase/config/i18n/">i18n 多语言</a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/vueBase/assets/js/app.cd7a30d8.js" defer></script><script src="/vueBase/assets/js/2.14c2eaff.js" defer></script><script src="/vueBase/assets/js/10.4a80e0f1.js" defer></script>
+  </body>
+</html>
